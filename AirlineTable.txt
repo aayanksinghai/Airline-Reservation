@@ -1,0 +1,41 @@
+create database airlinereservation;
+use airlinereservation;
+
+
+Create table Flight
+(
+Flight_No varchar(50) Primary Key,
+Type varchar(30),
+Trip varchar(20),
+Source varchar(20),
+Destination varchar(30),	
+ArrivalTime varchar(30),
+DepartureTime varchar(30)
+);
+
+
+Create table seating
+(
+Flight_No varchar(50) ,
+Seat_No int(6) ,
+flightdate date ,
+class varchar(20) ,
+fare decimal(8,2),
+status varchar(20),
+primary key(Flight_No,Seat_No,flightdate,class)
+);	
+
+Create table Booking
+(
+TicketNo int(3) AUTO_INCREMENT,
+Flight_No varchar(50),
+CustomerName varchar(50),
+BookingDate date,
+journeyDate date,
+Seat_No int(6),
+Class varchar(20),
+Fare decimal(8,2),
+EmailAddress varchar(30),
+primary key(TicketNO,Flight_No,Seat_No,journeyDate,class)
+);
+
